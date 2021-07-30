@@ -1,3 +1,11 @@
-import { makeHello } from "shared/module";
+import { Players } from "@rbxts/services";
+import PlayerWrapper from "./components/PlayerWrapper";
+import SpaceShip from "./components/spaceship/SpaceShip";
 
-print(makeHello("main.server.ts"));
+Players.PlayerAdded.Connect((player) => {
+    print("Player added: ", player.Name);
+    const spaceship: SpaceShip = new SpaceShip();
+    const playerWrapper: PlayerWrapper = new PlayerWrapper(player);
+});
+
+export {};
