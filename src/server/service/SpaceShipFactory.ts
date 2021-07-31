@@ -11,6 +11,7 @@ const gunFolder: Folder = <Folder>modelFolder.WaitForChild("Guns");
 
 const carcassSmall: Part = <Part>carcassFolder.WaitForChild("CarcassSmall");
 const carcassBig: Part = <Part>carcassFolder.WaitForChild("CarcassBig");
+const carcassLarge: Part = <Part>carcassFolder.WaitForChild("CarcassLarge");
 
 const engineWeak: Part = <Part>engineFolder.WaitForChild("EngineWeak");
 const engineStrong: Part = <Part>engineFolder.WaitForChild("EngineStrong");
@@ -21,6 +22,7 @@ const gunMachineBig: Part = <Part>gunFolder.WaitForChild("MachineGunBig");
 const enum CarcassType {
     Small = 0,
     Big,
+    Large,
 }
 
 enum EngineType {
@@ -41,6 +43,9 @@ function CreateCarcass(carcassType: CarcassType): Carcass {
             break;
         case CarcassType.Big:
             part = carcassBig.Clone();
+            break;
+        case CarcassType.Large:
+            part = carcassLarge.Clone();
             break;
         default:
             part = new Instance("Part");
