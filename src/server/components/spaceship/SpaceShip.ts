@@ -21,6 +21,15 @@ export default class SpaceShip {
         return this._carcass;
     }
 
+    public Shoot(): void {
+        this._carcass.GetGunSlots().forEach((slot) => {
+            const gun: Gun | undefined = slot.Get();
+            if (gun !== undefined) {
+                gun.Shoot();
+            }
+        });
+    }
+
     private _CreateSpaceShip(): void {
         const bodyPosition = new Instance("BodyPosition");
         bodyPosition.MaxForce = new Vector3(0, math.huge, 0);
