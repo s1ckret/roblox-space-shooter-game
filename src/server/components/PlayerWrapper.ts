@@ -12,6 +12,10 @@ export default class PlayerWrapper {
         this._model = this._CreateModel(this._spaceship);
     }
 
+    public Shoot(): void {
+        this._spaceship.Shoot();
+    }
+
     private _CreateModel(spaceship: SpaceShip): Model {
         const model: Model = new Instance("Model");
         model.Name = "StarterCharacter";
