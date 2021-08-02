@@ -17,6 +17,7 @@
 		"plugin:roblox-ts/recommended",
 		"plugin:prettier/recommended"
 	],
+	"ignorePatterns": ["**/vendor/**/*.js"],
 	"rules": {
 		"prettier/prettier": [
 			"warn",

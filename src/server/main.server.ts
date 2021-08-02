@@ -5,7 +5,6 @@ import PlayerMapper from "./service/PlayerMapper";
 
 Players.PlayerAdded.Connect((player) => {
     print("Player added: ", player.Name);
-    const spaceship: SpaceShip = new SpaceShip();
     const playerWrapper: PlayerWrapper = new PlayerWrapper(player);
     PlayerMapper.set(player, playerWrapper);
 });
