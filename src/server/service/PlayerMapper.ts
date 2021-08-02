@@ -8,7 +8,6 @@ export default class PlayerMapper {
     }
 
     public static delete(player: Player): void {
-        // TODO: destroy ?
         PlayerMapper.sMap.delete(player);
     }
 
