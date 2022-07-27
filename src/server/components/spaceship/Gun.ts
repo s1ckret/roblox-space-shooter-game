@@ -56,6 +56,7 @@ export default class Gun implements Insertable {
     public Shoot(): void {
         const origin: Vector3 = this._attachmentFire.WorldPosition;
         const direction: Vector3 = this._part.CFrame.LookVector;
+        // TODO: Read from properties
         this._caster.Fire(origin, direction, 250, this._castBehaviour);
     }
 
@@ -100,6 +101,7 @@ export default class Gun implements Insertable {
         if (chracter !== undefined) {
             const humanoid: Humanoid | undefined = <Humanoid>chracter.FindFirstChild("Humanoid");
             if (humanoid !== undefined) {
+                // TODO: Read from properties
                 humanoid.TakeDamage(10);
             }
         }
